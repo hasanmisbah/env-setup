@@ -1,7 +1,11 @@
-# Environment Setup (WIP)
+## Environment Setup (WIP)
  OS Ubuntu
 
- # Packages will Be installed
+
+## Description
+    This Script is for automate environment Setup (OS : UBUNTU)
+    it will install basic and recommended apps to setup environment one click
+ ## Packages will Be installed
  - [x] ubuntu-restricted-extras
  - [x] vlc
  - [x] wget
@@ -23,3 +27,6 @@
  - [x] php8.0-mcrypt
  - [x] php8.0-xml
  - [x] php8.0-zip
+
+## Author
+@hasanmisbah
