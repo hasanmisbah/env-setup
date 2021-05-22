@@ -5,35 +5,18 @@
 ## Description
     This Script is for automate environment Setup (OS : UBUNTU)
     it will install basic and recommended apps to setup environment one click
- ## Packages will Be installed
- - [x] ubuntu-restricted-extras
- - [x] vlc
- - [x] wget
- - [x] curl
- - [x] php8.0
- - [x] php8.0-fpm
- - [x] php8.0-mysql
- - [x] libapache2-mod-php8.0
- - [x] libapache2-mod-fcgid
- - [x] mysql-server
- - [x] mysql-client
- - [x] network-manager
- - [x] libnss3-tools
- - [x] jq
- - [x] xsel
- - [x] php8.0-cli
- - [x] php8.0-curl
- - [x] php8.0-mbstring
- - [x] php8.0-mcrypt
- - [x] php8.0-xml
- - [x] php8.0-zip
- - [x] NodeJS
- - [x] google-chrome
- - [x] microsoft edge beta
- - [x] microsoft edge beta
- - [ ] zsh
- - [ ] oh-my-zsh
- - [ ] auto load config file 
+ ## Packages
+
+Packages                  | Status              | Comment
+---                       | ---                 | ---
+Basic Ubuntu Package      | - [x]               | Including [ubuntu-restricted-extras, vlc wget curl]
+PHP                       | - [x]               | Including [php8.0, php8.0-fpm, php8.0-mysql, libapache2-mod-php8.0, libapache2-mod-fcgid ]
+mySql                     | - [x]               | including [mysql-server, mysql-client]
+Laravel (required)        | - [x]               | including [network-manager, libnss3-tools, jq, xsel, php8.0-cli, php8.0-curl, php8.0-mbstring, php8.0-mcrypt, php8.0-xml, php8.0-zip ]
+NodeJs                    | - [x]               | included [NodeJS, NPM ]
+Apps                      | - [x]               | included [google-chrome, microsoft edge beta ]
+Customization             | - [ ]               | included [zsh, oh-my-zsh, config File]
+
 
 ## License
 [ MIT License](https://hasan.mit-license.org) 
