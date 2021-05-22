@@ -3,7 +3,6 @@
 scriptName='Apps Installer'
 
 
-
 # Regular Colors
 Color_Off='\033[0m'       # Reset
 Red='\033[0;31m'          # Red
@@ -43,6 +42,7 @@ installBasic(){
 }
 
 installPhp(){
+
     echo  "\n${Purple} * installing [software-properties-common]...${Color_Off}"
     sudo apt -qq install software-properties-common -y
     echo  "\n${Green} * Package [software-properties-common] Successfully Installed ${Color_Off}"
@@ -57,6 +57,7 @@ installPhp(){
 }
 
 installMysql(){
+
     echo  "\n${Purple} * installing [mysql-server]...${Color_Off}"
     sudo apt install mysql-server mysql-client -y
     echo  "\n${Green} * Package [mysql-server] Successfully Installed ${Color_Off}"
@@ -68,6 +69,7 @@ installMysql(){
 }
 
 laravelPackage(){
+
     echo  "\n${Purple} * installing [network-manager libnss3-tools jq xsel]...${Color_Off}"
     sudo apt -qq install network-manager libnss3-tools jq xsel -y
     echo  "\n${Green} * Package [network-manager libnss3-tools jq xsel] Successfully Installed ${Color_Off}"
@@ -77,8 +79,42 @@ laravelPackage(){
     echo  "\n${Green} * Package [network-manager libnss3-tools jq xsel] Successfully Installed ${Color_Off}"
 }
 
-bootstrap(){
-    #installPhp
-    installMysql
+
+installApps(){
+
+    echo  "\n${Purple} * Downloading Googel Chrome...${Color_Off}"
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
+    echo  "\n${Purple} * Google Chrome Download Success...${Color_Off}"
+
+    echo  "\n${Purple} * Installing Google Chrome...${Color_Off}"
+    sudo apt install ./google-chrome-stable_current_amd64.deb
+    sudo apt -f install
+    rm -rf ./google-chrome-stable_current_amd64.deb
+    echo  "\n${Purple} * Google Chrome Successfully Installed ...${Color_Off}"
+
+    echo  "\n${Purple} * Installing NodeJS ...${Color_Off}"
+    curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo apt install -y nodejs
+    echo  "\n${Purple} * NodeJs Successfully Installed ...${Color_Off}"
+
+    echo  "\n${Purple} * Installing microsoft Edge ...${Color_Off}"
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+    sudo rm microsoft.gpg
+    sudo apt update && sudo apt install microsoft-edge-beta -y
+    echo  "\n${Purple} * Microsoft edge  Successfully Installed ...${Color_Off}"
+
 }
+bootstrap(){
+    checkRoot
+    update
+    upgrade
+    installBasic
+    installPhp
+    installMysql
+    laravelPackage
+    installApps
+}
+
 bootstrap

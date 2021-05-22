@@ -27,6 +27,15 @@
  - [x] php8.0-mcrypt
  - [x] php8.0-xml
  - [x] php8.0-zip
+ - [x] NodeJS
+ - [x] google-chrome
+ - [x] microsoft edge beta
+ - [x] microsoft edge beta
+ - [ ] zsh
+ - [ ] oh-my-zsh
+ - [ ] auto load config file 
 
+## License
+[ MIT License](https://hasan.mit-license.org) 
 ## Author
-@hasanmisbah
+[ @hasanmisbah ](https://github.com/hasanmisbah) 
