@@ -15,8 +15,22 @@ mySql                     | &#9745;      | Included Package [mysql-server, mysql
 Laravel (required)        | &#9745;      | Included Package [network-manager, libnss3-tools, jq, xsel, php8.0-cli, php8.0-curl, php8.0-mbstring, php8.0-mcrypt, php8.0-xml, php8.0-zip ]
 NodeJs                    | &#9745;      | Included Package [NodeJS, NPM ]
 Apps                      | &#9745;      | Included Package [google-chrome, microsoft edge beta ]
+installZsh                | &#9745;      | Included Package [Zsh, oh-my-zsh]
+installVim                | &#9745;      | Included Package [vim]
 Customization             | &#9744;      | Included Package [zsh, oh-my-zsh, config File]
 
+
+## Uses
+
+```sh
+wget https://raw.githubusercontent.com/hasanmisbah/env-setup/master/env-setup.sh
+
+sudo ./env-setup.sh
+```
+
+Enter your root password and take a cup coffe.
+
+**Boom** everything is installed
 
 ## License
 [ MIT License](https://hasan.mit-license.org) 
