@@ -157,4 +157,4 @@ bootstrap(){
     installVim
 }
 
-# bootstrap
+ bootstrap
