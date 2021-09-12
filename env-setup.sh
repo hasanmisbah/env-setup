@@ -3,6 +3,23 @@
 scriptName='Apps Installer'
 
 
+title="
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+─██████──────────██████─██████████████─██████─────────██████████████─██████████████─██████──────────██████─██████████████─
+─██░░██──────────██░░██─██░░░░░░░░░░██─██░░██─────────██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██████████████░░██─██░░░░░░░░░░██─
+─██░░██──────────██░░██─██░░██████████─██░░██─────────██░░██████████─██░░██████░░██─██░░░░░░░░░░░░░░░░░░██─██░░██████████─
+─██░░██──────────██░░██─██░░██─────────██░░██─────────██░░██─────────██░░██──██░░██─██░░██████░░██████░░██─██░░██─────────
+─██░░██──██████──██░░██─██░░██████████─██░░██─────────██░░██─────────██░░██──██░░██─██░░██──██░░██──██░░██─██░░██████████─
+─██░░██──██░░██──██░░██─██░░░░░░░░░░██─██░░██─────────██░░██─────────██░░██──██░░██─██░░██──██░░██──██░░██─██░░░░░░░░░░██─
+─██░░██──██░░██──██░░██─██░░██████████─██░░██─────────██░░██─────────██░░██──██░░██─██░░██──██████──██░░██─██░░██████████─
+─██░░██████░░██████░░██─██░░██─────────██░░██─────────██░░██─────────██░░██──██░░██─██░░██──────────██░░██─██░░██─────────
+─██░░░░░░░░░░░░░░░░░░██─██░░██████████─██░░██████████─██░░██████████─██░░██████░░██─██░░██──────────██░░██─██░░██████████─
+─██░░██████░░██████░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░░░░░░░░░██─██░░██──────────██░░██─██░░░░░░░░░░██─
+─██████──██████──██████─██████████████─██████████████─██████████████─██████████████─██████──────────██████─██████████████─
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+"
+printf "${title}"
+
 # Regular Colors
 Color_Off='\033[0m'       # Reset
 Red='\033[0;31m'          # Red
@@ -24,18 +41,21 @@ checkRoot(){
 }
 
 update(){
+
     echo  "${Purple} * Updating package repositories...${Color_Off}"
     sudo apt -qq update
     echo  "\n${Green} * Package Successfully Updated ${Color_Off}"
 }
 
 upgrade(){
+
     echo  "\n${Purple} * Upgrading all installed package...${Color_Off}"
     sudo apt -qq upgrade -y
     echo  "\n${Green} * Package Successfully Upgraded ${Color_Off}"
 }
 
 installBasic(){
+
     echo  "\n${Purple} * installing [install ubuntu-restricted-extras vlc wget curl]...${Color_Off}"
     sudo apt -qq install ubuntu-restricted-extras vlc wget curl
     echo  "\n${Green} * Package [ubuntu-restricted-extras, vlc, wget, curl] Successfully Installed ${Color_Off}"
@@ -106,6 +126,24 @@ installApps(){
     echo  "\n${Purple} * Microsoft edge  Successfully Installed ...${Color_Off}"
 
 }
+
+installZsh(){
+    echo  "\n${Purple} * Installing zsh...${Color_Off}"
+    sudo apt -qq install zsh -y
+    echo  "\n${Purple} * zsh Successfully installed...${Color_Off}"
+
+    echo  "\n${Purple} * Installing Oh-my-zsh...${Color_Off}"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    echo  "\n${Purple} * oh-my-zsh Successfully installed...${Color_Off}"
+}
+
+installVim(){
+    echo  "\n${Purple} * Installing vim...${Color_Off}"
+    sudo apt -qq install vim -y
+    echo  "\n${Purple} * vim Successfully installed...${Color_Off}"
+}
+
+
 bootstrap(){
     checkRoot
     update
@@ -115,6 +153,8 @@ bootstrap(){
     installMysql
     laravelPackage
     installApps
+    installZsh
+    installVim
 }
 
-bootstrap
+# bootstrap
