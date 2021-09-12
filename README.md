@@ -25,7 +25,7 @@ Customization             | &#9744;      | Included Package [zsh, oh-my-zsh, con
 ```sh
 wget https://raw.githubusercontent.com/hasanmisbah/env-setup/master/env-setup.sh
 
-sudo ./env-setup.sh
+sh ./env-setup.sh
 ```
 
 Enter your root password and take a cup coffe.
